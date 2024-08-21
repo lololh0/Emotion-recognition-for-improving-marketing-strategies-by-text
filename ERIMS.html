@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotion Recognition for Marketing Strategies</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts Links For Icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <!-- Importing Google font - Poppins -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 11px;
+  background-color: rgba(108, 97, 97, 0.15); /* Transparent background */
+  backdrop-filter: blur(5px); /* Blur effect */
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  z-index: 999;
+}
+
+    header .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .navbar .logo {
+      color: #fff;
+      font-weight: 600;
+      font-size: 2.2rem;
+      text-decoration: none;
+    }
+    .navbar .logo span {
+      color: #C06B3E;
+    }
+    .navbar .menu-links {
+      display: flex;
+      list-style: none;
+      gap: 35px;
+    }
+    .navbar a {
+      color: #383731;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+    .navbar a:hover {
+      color: #C06B3E;
+    }
+   .hero-section {
+      height: 100vh;
+      background-image: url("A.jpg");
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+
+    .hero-section .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      color: #383731;
+    }
+    .hero-section .content h2 {
+      font-size: 2.1rem;
+      max-width: 650px;
+      line-height: 70px;
+    }
+    .hero-section .content p {
+      font-weight: 300;
+      max-width: 600px;
+      margin-top: 30px;
+    }
+    .hero-section .content button {
+      background: #fff;
+      padding: 12px 30px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 6px;
+      margin-top: 38px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+    .hero-section .content button:hover {
+      color: #fff;
+      background: #C06B3E;
+    }
+    #close-menu-btn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+      display: none;
+      color: #fff;
+    }
+    #hamburger-btn {
+      color: #fff;
+      cursor: pointer;
+      display: none;
+    }
+    @media (max-width: 768px) {
+      header {
+        padding: 10px;
+      }
+      header.show-mobile-menu::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(5px);
+      }
+      .navbar .logo {
+        font-size: 1.7rem;
+      }
+      #hamburger-btn, #close-menu-btn {
+        display: block;
+      }
+      .navbar .menu-links {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        padding: 70px 40px 0;
+        transition: left 0.2s ease;
+      }
+      header.show-mobile-menu .navbar .menu-links {
+        left: 0;
+      }
+      .navbar a {
+        color: #000;
+      }
+      .hero-section .content {
+        text-align: center;
+      }
+      .hero-section .content :is(h2, p) {
+        max-width: 100%;
+      }
+      .hero-section .content h2 {
+        font-size: 2.3rem;
+        line-height: 50px;
+      }
+      .hero-section .content button {
+        padding: 9px 18px;
+      }
+    }
+    /* Additional Styles for new sections */
+    .section {
+      padding: 80px 20px;
+      background-color: #f9f9f9;
+
+    }
+    .section h2 {
+      margin-bottom: 60px;
+    }
+    .section p {
+      margin-bottom: 40px;
+    }
+
+   .section h3 {
+      margin-top: 30px; /* Added margin-top */
+      margin-bottom: 30px; /* Adjust the margin as needed */
+
+     }
+    /* Testimonials Section */
+    .testimonials-container {
+      padding: 50px 100px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    .testimonial {
+      margin-bottom: 30px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    #.testimonial img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+
+    .testimonial p {
+      font-size: 16px;
+      color: #333;
+    }
+    .testimonial .author {
+      font-weight: bold;
+      color: #444;
+    }
+
+  /* CSS Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+
+/* CSS Styles */
+  .faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+
+
+  .faq-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .faq-item {
+    margin-bottom: 20px;
+  }
+
+  .faq-question {
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    text-align: left;
+      }
+
+  .faq-answer {
+    display: none;
+    padding-top: 10px;
+    color: #666;
+    text-align: left;
+  }
+
+  .faq-question.active {
+    border-bottom: 1px solid transparent;
+  }
+
+  .faq-question.active + .faq-answer {
+    display: block;
+  }
+
+  #contact-us .row {
+  margin: 60px 0 90px;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  #align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#contact-us .row .col {
+  padding: 0 10px;
+  width: calc(100% / 2 - 50px);
+}
+
+#contact-us .col p {
+  margin-bottom: 10px;
+}
+
+#contact-us .col p i {
+  color: #7a7a7a;
+  margin-right: 8px;
+
+}
+
+#contact-us form input {
+  height: 35px;
+  margin-bottom: 14px;
+  padding: 10px;
+  width: 100%;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid #bfbfbf;
+}
+
+#contact-us form textarea {
+  padding: 10px;
+  width: 100%;
+  font-size: 15px;
+  height: 150px;
+  outline: none;
+  resize: vertical;
+  border: 1px solid #bfbfbf;
+}
+
+#contact-us form button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 17px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #c06b3e;
+  transition: 0.2s ease;
+}
+
+#contact-us form button:hover {
+  background: #514d4b;
+}
+/* Footer Section */
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ffffff;
+    }
+    .footer p {
+      font-size: 14px;
+      color: #888888;
+    }
+
+  </style>
+<body>
+  <header>
+    <nav class="navbar">
+      <a class="logo" href="#">ERI<span>MS.</span></a>
+      <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+      <ul class="menu-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact-us">Contact us</a></li>
+      </ul>
+      <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+    </nav>
+  </header>
+<!-- Sections Start -->
+<section id="home" class="hero-section">
+  <div class="content">
+    <h2 >𝑬𝒎𝒐𝒕𝒊𝒐𝒏 𝑹𝒆𝒄𝒐𝒈𝒏𝒊𝒕𝒊𝒐𝒏 𝒇𝒐𝒓 𝑰𝒎𝒑𝒓𝒐𝒗𝒊𝒏𝒈 𝑴𝒂𝒓𝒌𝒆𝒕𝒊𝒏𝒈 𝑺𝒕𝒓𝒂𝒕𝒆𝒈𝒊𝒆𝒔</h2>
+    <p style="font-size:1.30vw;">Understand your audience better and improve your marketing efforts with our advanced emotion recognition technology.</p>
+    <button onclick="redirectToStreamlit()">Try now</button>
+  </div>
+</section>
+
+<script>
+  function redirectToStreamlit() {
+    window.location.href = 'http://localhost:8501';
+  }
+</script>
+  <section id="how-it-works" class="section">
+    <h2 style="font-size: 3rem; color: #c06b3e;">𝐻𝑜𝑤 𝑖𝑡 𝑤𝑜𝑟𝑘𝑠</h2>
+    <div class="steps">
+      <div class="step" id="step-1">
+        <h3 style="font-size: 18px;">Step 1: Input comment</h3>
+        <p style="font-size: 16px;">Analyze your customers' comments or feedback by simply entering <br> them into our system.</p>
+      </div>
+      <div class="step" id="step-2">
+        <h3 style="font-size: 18px;">Step 2: Analysis</h3>
+        <p style="font-size: 16px;">Our advanced algorithm will analyze the text and detect various<br>emotions such as happiness, sadness, excitement, and more.</p>
+      </div>
+      <div class="step" id="step-3">
+        <h3 style="font-size: 18px;">Step 3: Result display</h3>
+        <p style="font-size: 16px;">View the analyzed emotions along with corresponding percentages<br>or scores in an easy-to-understand format.</p>
+      </div>
+      <div class="step" id="step-4">
+        <h3 style="font-size: 18px;">Step 4: Actionable insights</h3>
+        <p style="font-size: 16px;">Use these insights to tailor your marketing strategies, improve<br>customer engagement, and boost conversion rates.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section testimonials">
+    <h2 style="font-size: 3rem; color: #c06b3e;">𝑇𝑒𝑠𝑡𝑖𝑚𝑜𝑛𝑖𝑎𝑙𝑠</h2>
+    <div class="testimonials-container">
+      <div class="testimonial">
+        <img src="i.jpeg" alt="User 1" width="190" height="220">
+        <p style="font-size: 15px;">"I've been amazed by the insights provided by this emotion recognition system. It's truly a game-changer for our marketing strategies."</p>
+        <p class="author" style="font-size: 14px;">John Doe, Marketing Manager</p>
+      </div>
+
+      <div class="testimonial">
+        <img src="i1.jpeg" alt="User 2" width="200" height="270">
+        <p style="font-size: 15px;">"Using this service has significantly improved our understanding of customer sentiment. Highly recommended!"</p>
+        <p class="author" style="font-size: 14px;">Jane Smith, CEO</p>
+      </div>
+
+      <div class="testimonial">
+        <img src="i2.jpeg" alt="User 3" width="199" height="240">
+        <p style="font-size: 15px;">"The accuracy of the emotion recognition is impressive. It helps us tailor our campaigns to better resonate with our audience."</p>
+        <p class="author" style="font-size: 14px;">David Brown, Head of Marketing</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+  <h2 style="font-size: 3rem; color: #c06b3e;">𝐹𝐴𝑄</h2>
+<div class="faq-item">
+  <div class="faq-question fixed" onclick="toggleAnswer(this)" style="font-size: 15px;">Q: What is emotion recognition in marketing?</div>
+  <div class="faq-answer" style="font-size: 15px;">Emotion recognition is a technology that analyzes text or speech to<br> detect emotional cues, helping marketers understand customer<br>sentiments and preferences better.</div>
+</div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)" style="font-size: 15px;">Q: How accurate is your emotion recognition tool?</div>
+    <div class="faq-answer" style="font-size: 15px;">Our tool utilizes state-of-the-art algorithms and machine learning<br>techniques, achieving high accuracy in emotion detection.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)" style="font-size: 15px;">Q: I use this tool for market research?</div>
+    <div class="faq-answer" style="font-size: 15px;">Absolutely! Our tool is designed to assist marketers in improving <br>their marketing strategies through better understanding of<br>customer emotions and behaviors.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)" style="font-size: 15px;">Q: How does emotion recognition benefit marketing strategies?</div>
+    <div class="faq-answer" style="font-size: 15px;">Emotion recognition provides valuable insights into customer <br> reactions and preferences, allowing marketers to tailor their<br>strategies to evoke desired emotions and drive engagement<br> and sales.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)" style="font-size: 15px;">Q: Is the data from the emotion recognition tool secure?</div>
+    <div class="faq-answer" style="font-size: 15px;">Yes, we take data security seriously. Our platform ensures that all<br> user data is encrypted and protected according to industry standards.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)" style="font-size: 15px;">Q: Can I integrate this tool with my existing marketing platforms?</div>
+    <div class="faq-answer" style="font-size: 15px;">Yes, our tool is designed to be easily integrated with various<br> marketing platforms and tools, providing seamless access<br> to emotion recognition insights.</div>
+  </div>
+</section>
+
+  <section id="contact-us" class="section">
+  <h2 style="font-size: 3rem; color: #c06b3e;">𝐶𝑜𝑛𝑡𝑎𝑐𝑡 𝑢𝑠</h2>
+  <p style="font-size: 18px;">𝑹𝒆𝒂𝒄𝒉 𝒐𝒖𝒕 𝒕𝒐 𝒖𝒔 𝒇𝒐𝒓 𝒂𝒏𝒚 𝒊𝒏𝒒𝒖𝒊𝒓𝒊𝒆𝒔 𝒐𝒓 𝒇𝒆𝒆𝒅𝒃𝒂𝒄𝒌.</p>
+  <div class="row">
+    <div class="col information">
+      <div class="contact-details">
+        <p style="font-size: 16px;"><i class="fas fa-map-marker-alt"></i>123 Tabuk Street, Al Ulaya District, Tabuk 47311, Saudi Arabia</p>
+        <p style="font-size: 16px;"><i class="fas fa-envelope"></i> info@EmotionEchoMarketing.com</p>
+        <p style="font-size: 16px;"><i class="fas fa-phone"></i> (123) 993-5012</p>
+        <p style="font-size: 16px;"><i class="fas fa-clock"></i> Saturday - Friday: 10:00 AM - 9:00 PM</p>
+        <p style="font-size: 16px;"><i class="fas fa-clock"></i> Monday : 8:00 AM - 7:00 PM</p>
+        <p style="font-size: 16px;"><i class="fas fa-clock"></i> Wednesday: Closed</p>
+        <p style="font-size: 16px;"><i class="fas fa-globe"></i> www.EmRecognitionMarketingStrategies.com</p>
+      </div>
+    </div>
+    <div class="col form">
+      <form>
+        <input type="text" placeholder="𝑁𝑎𝑚𝑒*" required>
+        <input type="email" placeholder="𝐸𝑚𝑎𝑖𝑙*" required>
+        <textarea placeholder="𝑀𝑒𝑠𝑠𝑎𝑔𝑒*" required></textarea>
+        <button id="submit" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>Contact information | Copyright information</p>
+    <p>&copy; 2024 All rights Reserved</p>
+  </footer>
+  <script>
+
+  <!-- Sections End -->
+  <script>
+  const header = document.querySelector("header");
+  const hamburgerBtn = document.querySelector("#hamburger-btn");
+  const closeMenuBtn = document.querySelector("#close-menu-btn");
+
+  // Toggle mobile menu on hamburger button click
+  hamburgerBtn.addEventListener("click", () => header.classList.toggle("show-mobile-menu"));
+</script>
+
+<script>
+  // JavaScript function to toggle answer visibility
+  function toggleAnswer(question) {
+    question.classList.toggle('active');
+    var answer = question.nextElementSibling;
+    if (answer.style.display === 'block') {
+      answer.style.display = 'none';
+    } else {
+      answer.style.display = 'block';
+    }
+  }
+</script>
+</body>
+</html>
