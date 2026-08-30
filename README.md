@@ -1,16 +1,22 @@
 # Emotion-recognition-for-improving-marketing-strategies-by-text
+
 ### 📁 Project Structure
 
-**Frontend** → ERIMS.html
+**Frontend** → `ERIMS.html`
 
-**Backend / ML** → ERIMS.py | 2024(ERIMS).pkl
+**Backend / ML** → `ERIMS.py` | `2024(ERIMS).pkl`
 
-**Dashboard** → Emotion Analysis Dashboard 1.jpeg | Emotion Analysis Dashboard 2.jpeg | Emotion Analysis Dashboard before click start analyzing button.jpeg | Emotion Analysis Dashboard After click start analyzing button.jpeg
+**Dashboard** → `Emotion Analysis Dashboard 1.jpeg` | `Emotion Analysis Dashboard 2.jpeg` | `Emotion Analysis Dashboard before click start analyzing button.jpeg` | `Emotion Analysis Dashboard After click start analyzing button.jpeg`
 
-**UI & Documentation Images** → ERIMS – UI.jpeg | ERIMS – Contact Page.jpeg | ERIMS – FAQ Section.jpeg | ERIMS – System Workflow.jpeg | ERIMS – Testimonials Section 1.jpeg | ERIMS – Testimonials Section 2.jpeg | ERIMS – Testimonials Section 3.jpeg
+**UI & Documentation Images** → `ERIMS – UI.jpeg` | `ERIMS – Contact Page.jpeg` | `ERIMS – FAQ Section.jpeg` | `ERIMS – System Workflow.jpeg` | `ERIMS – Testimonials Section 1.jpeg` | `ERIMS – Testimonials Section 2.jpeg` | `ERIMS – Testimonials Section 3.jpeg`
 
-**Project Assets** → A.jpg | i.jpeg | i1.jpeg | i2.jpeg
+**Project Assets** → `A.jpg` | `i.jpeg` | `i1.jpeg` | `i2.jpeg`
 
+---
+
+### 🔄 System Workflow
+
+```text
                          ┌──────────────────────┐
                          │        ERIMS         │
                          │ Emotion Recognition  │
@@ -21,7 +27,7 @@
                     │                               │
               ┌─────▼─────┐                   ┌─────▼─────┐
               │   Input   │                   │   Model   │
-              │ Text/Tweet│                   │   ML/NLP  │
+              │ Text/Tweet│                   │  ML/NLP   │
               └─────┬─────┘                   └─────┬─────┘
                     │                               │
                     ▼                               │
@@ -55,3 +61,16 @@
           │ Marketing Insights│
           │ & Decision Support│
           └──────────────────┘
+```
+
+---
+
+### 🖥️ User Interface
+
+#### ERIMS – Next Step
+
+![ERIMS Next Step for UI](ERIMS%20Next%20Step%20for%20\(UI\).png)
+
+#### ERIMS – User Interface
+
+![ERIMS User Interface](ERIMS%20User%20Interface%20\(UI\).png)
