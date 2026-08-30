@@ -67,10 +67,10 @@
 
 ### 🖥️ User Interface
 
-#### ERIMS – Next Step
-
-![ERIMS Next Step for UI](ERIMS%20Next%20Step%20for%20\(UI\).png)
-
 #### ERIMS – User Interface
 
 ![ERIMS User Interface](ERIMS%20User%20Interface%20\(UI\).png)
+
+#### ERIMS – Next Step
+
+![ERIMS Next Step for UI](ERIMS%20Next%20Step%20for%20\(UI\).png)
